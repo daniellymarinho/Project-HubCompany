@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { api } from "../../services";
 import { PageHeader } from "../../components/pagesHeader";
 import { StylePage, StyledHeader, StyleDescription, StyledForm } from "./style";
 import { FormRegister } from "../../components/formRegister";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { UserContext } from "../../context/userContext";
+import { useContext } from "react";
 
 const formSchema = yup.object().shape({
   name: yup.string().required("Campo obrigatório"),
@@ -39,14 +39,7 @@ export const Register = () => {
   });
   const navigate = useNavigate();
 
-  const onSubmitFunction = async (data) => {
-    try {
-      await api.post("/users", data);
-      navigate("/login"), toast.success("Cadastro realizado com sucesso");
-    } catch (error) {
-      console.log(error), toast.error("Ops! Algo deu errado");
-    }
-  };
+  const {onSubmitFunction} = useContext(UserContext)
 
   return (
     <StylePage>

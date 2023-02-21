@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   --font: 'Inter', sans-serif;
 
   --radius: 4px;
-
+--color: rgba(0, 0 ,0, 0.8)
 }
 
 body{

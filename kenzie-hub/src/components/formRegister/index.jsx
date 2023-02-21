@@ -65,11 +65,10 @@ export const FormRegister = ({ register, errors }) => {
       <select name="" id="module" {...register("course_module")}>
         <option value="">Módulos</option>
         <option value="primeiro modulo">Primeiro módulo (Introdução ao frontEnd) </option>
-        <option value="segundo modulo">Segundo módulo (frontEnd intermediário) </option>
-        <option value="terceiro modulo">Terceiro módulo (frontEnd avançado) </option>
-        <option value="quarto modulo">Quarto módulo (introdução ao backend) </option>
-        <option value="quinto modulo">Quinto módulo (Backend intermediário) </option>
-        <option value="sexto modulo ">Sexto módulo (Backend avançado) </option>
+        <option value="segundo modulo">Segundo módulo (frontEnd avançado) </option>
+        <option value="terceiro modulo">Terceiro módulo (introdução ao backend) </option>
+        <option value="quarto modulo">Quarto módulo (BackEnd avançado) </option>
+       
         {errors.course_module?.message}
       </select>
       
